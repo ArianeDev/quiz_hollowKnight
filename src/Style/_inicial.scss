@@ -13,7 +13,7 @@
 
     .entrar {
         background: $botao-azul;
-        color: #fff;
+        color: black;
         padding: 15px 40px;
         border: none;
         border-radius: 30px;
@@ -31,7 +31,7 @@
         }
 
         &:focus {
-            outline: 3px solid #ffd700;
+            outline: 3px solid #b700ff;
             outline-offset: 3px;
         }
     
