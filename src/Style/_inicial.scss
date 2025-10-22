@@ -1,0 +1,53 @@
+@use './variaveis' as *;
+.inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+
+    .logo {
+      height: 30%;
+    }
+
+    .entrar {
+        background: $botao-azul;
+        color: #fff;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: $sombrasBox;
+        transition: transform 0.2s, background 0.3s;
+        justify-content: center;
+
+        &:hover {
+            transform: scale(1.05);
+            background: $botao-amarelo;
+            color: #fff;
+        }
+
+        &:focus {
+            outline: 3px solid #ffd700;
+            outline-offset: 3px;
+        }
+    
+
+    
+
+}
+@media (max-width: 768px) {
+    h1 {
+      font-size: 2rem; // título menor em tablet
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+
+}

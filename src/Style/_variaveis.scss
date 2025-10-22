@@ -1,0 +1,61 @@
+$fundo: #04010f;
+$claro: #f0ebeb;
+$card:#dcdff2;
+$sombrasBox: 0 4px 10px rgba(0, 0, 0, 0.3);
+$destaque-rosa: #ff3d7f transparent;
+$gradiente-rosa: linear-gradient(135deg, #2f1048, #e4018d);
+$foco: #4c0f32;
+$botao-azul: linear-gradient(135deg, #a1a1a1, #252525);
+$botao-amarelo: linear-gradient(135deg, #00158f, #00022c);
+$box-fundo: rgba(0, 0, 0, 0.8);
+$borda: 1px solid $fundo;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $fundo;
+  width: 100vw;
+  height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+
+}
+
+/* BOTÃO */
+button {
+  margin-top: 1rem;
+  align-self: center;
+  background: $gradiente-rosa;
+  color: $claro;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  gap: 20px;
+}
+
+button:hover {
+  background: $gradiente-rosa;
+  transform: scale(1.05);
+  gap: 30px;
+}
+
+button:focus {
+  outline: 3px solid #4c0f32;
+  outline-offset: 3px;
+}
+
+button[disabled],
+.btn-disabled { 
+  color: #0e0404;
+  cursor: not-allowed;
+  opacity: 0.8;
+  background-color: #f3f1f2;
+}

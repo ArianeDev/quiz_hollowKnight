@@ -1,0 +1,47 @@
+@use './variaveis' as *;
+
+.menu {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  flex: 1 1 100px; 
+  text-align: center;
+}
+
+.menu figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  color: white;
+  font-size: 1rem;
+}
+
+.menu img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+
