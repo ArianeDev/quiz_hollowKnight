@@ -3,7 +3,7 @@ $claro: #f0ebeb;
 $card:#dcdff2;
 $sombrasBox: 0 4px 10px rgba(0, 0, 0, 0.3);
 $destaque-rosa: #ff3d7f transparent;
-$gradiente-rosa: linear-gradient(135deg, #2f1048, #e4018d);
+$gradiente-rosa: linear-gradient(135deg, #10483f, #9b00a0);
 $foco: #4c0f32;
 $botao-azul: linear-gradient(135deg, #8f8f8f, #535353);
 $botao-amarelo: linear-gradient(135deg, #b700ff, #00022c);
@@ -21,13 +21,13 @@ body {
   background-color: $fundo;
   width: 100vw;
   height: 100vh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 16px;
 
 }
 
 /* BOTÃO */
-button {
+.button {
   margin-top: 1rem;
   align-self: center;
   background: $gradiente-rosa;
@@ -41,18 +41,18 @@ button {
   gap: 20px;
 }
 
-button:hover {
+.button:hover {
   background: $gradiente-rosa;
   transform: scale(1.05);
   gap: 30px;
 }
 
-button:focus {
+.button:focus {
   outline: 3px solid #4c0f32;
   outline-offset: 3px;
 }
 
-button[disabled],
+.button[disabled],
 .btn-disabled { 
   color: #0e0404;
   cursor: not-allowed;
