@@ -1,0 +1,14 @@
+.main-galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 0.4rem;
+    box-shadow: 0 0 25px rgba(27, 67, 247, 0.4);
+
+    .galeria {
+        scroll-behavior: smooth;
+        scrollbar-color: #6b6b6b transparent;
+    }
+}

@@ -39,16 +39,16 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
 
       <label htmlFor="resposta" className="sr-only">
         Digite sua resposta
+        <input
+          className="caixaTexto"
+          id="resposta"
+          type="text"
+          placeholder="Digite sua resposta..."
+          value={resposta}
+          onChange={(e) => setResposta(e.target.value)}
+          required
+        />
       </label>
-      <input
-        className="caixaTexto"
-        id="resposta"
-        type="text"
-        placeholder="Digite sua resposta..."
-        value={resposta}
-        onChange={(e) => setResposta(e.target.value)}
-        required
-      />
 
       <div className="modal-botoes">
         <button onClick={verificarResposta} className="buttonModal">Enviar</button>

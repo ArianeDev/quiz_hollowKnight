@@ -3,6 +3,7 @@ import mapa from '../assets/Conifer.png';
 import bau from '../assets/bau_tratado.png';
 import camera from '../assets/camera_tratado.png';
 import { Link } from 'react-router-dom'
+
 export function Menu() {
     return (
         <div className='menu'>
@@ -29,14 +30,14 @@ export function Menu() {
                         <figcaption>GeoLocalização</figcaption>
                     </figure>
                 </li>
-                 <li>
-                    
-                    <figure>
-                        <img src={camera} alt="camera" />
-                        <figcaption>Camera</figcaption>
-                    </figure>
-                    
-                </li>
+                <Link to='galeria'>
+                    <li>
+                        <figure>
+                            <img src={camera} alt="camera" />
+                            <figcaption>Camera</figcaption>
+                        </figure>
+                    </li>
+                </Link>   
             </ul>
         </div>
     )
