@@ -13,7 +13,9 @@ export default function Galeria() {
 
     return (
         <main className="main-galeria">
-            <Camera onFotoTirada={handleCapture}/>
+            {/* Câmera */}
+            <Camera onFotoTirada={handleCapture}/> 
+            {/* Galeria de fotos */}
             <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164} className="galeria">
                 {fotos.map((item, index) => (
                     <ImageListItem key={index}>

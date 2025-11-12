@@ -45,6 +45,7 @@ export function Camera({ onFotoTirada }) {
         <section className="camera-box">
             <h2>Captura de câmera</h2>
             <div className="preview">
+                {/* Exibe a imagem que a câmera está capturando */}
                 {!foto ? (
                     <video 
                         ref={videoRef}
@@ -53,6 +54,7 @@ export function Camera({ onFotoTirada }) {
                         aria-label="Fluxo de camera"
                     />
                 ) : (
+                    // Mostra a foto tirada
                     <img src={foto} alt="Foto capturada" />
                 )}
             </div>
