@@ -50,10 +50,10 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
         />
       </label>
 
-      <div className="modal-botoes">
+      <section className="modal-botoes">
         <button onClick={verificarResposta} className="buttonModal">Enviar</button>
         <button onClick={onClose} className="buttonModal">Fechar</button>
-      </div>
+      </section>
 
       {resultado && (
         <div className="resultado">

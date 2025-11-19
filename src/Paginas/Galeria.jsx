@@ -4,29 +4,45 @@ import ImageListItem from '@mui/material/ImageListItem';
 import { useState } from "react";
 
 export default function Galeria() {
-    const [fotos, setFotos] = useState([]);
+    const [fotos, setFoto] = useState(() => {
+        const salvas = localStorage.getItem("fotos");
+        return salvas ? JSON.parse(salvas) : [];
+    });
 
-    const handleCapture = (novaFoto) => {
-        setFotos([...fotos, novaFoto])
+    const adicionarFoto = (novaFoto) => {
+        const novasFotos = [...fotos, novaFoto];
+        setFoto(novasFotos);
+        localStorage.setItem("fotos", JSON.stringify(novasFotos));
     }
-    console.log(fotos);
+
+    const limparGaleria = () => {
+        if (!confirm("Deseja limpar sua galeria?")) return;
+        localStorage.removeItem("fotos");
+        setFoto([]);
+    }
+    
 
     return (
         <main className="main-galeria">
             {/* Câmera */}
-            <Camera onFotoTirada={handleCapture}/> 
+            <Camera onFotoTirada={adicionarFoto} limparGaleria={limparGaleria}/> 
             {/* Galeria de fotos */}
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164} className="galeria">
-                {fotos.map((item, index) => (
-                    <ImageListItem key={index}>
-                    <img
-                        src={item}
-                        alt={`Foto ${index}`}
-                        loading="lazy"
-                    />
-                    </ImageListItem>
-                ))}
-            </ImageList>
+            <h1>Galeria de Fotos</h1>
+            {fotos.legth === 0 ? (
+                <p>Nenhuma foto foi tirada!</p>
+            ) : (
+                <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164} className="galeria">
+                    {fotos.map((item, index) => (
+                        <ImageListItem key={index}>
+                        <img
+                            src={item}
+                            alt={`Foto ${index + 1}`}
+                            loading="lazy"
+                        />
+                        </ImageListItem>
+                    ))}
+                </ImageList>
+            )}
         </main>
     );
 }

@@ -2,50 +2,58 @@
 
 dialog.modal {
   position: fixed;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  max-height: 80%;
-  background: rgba(0,0,0,0.8);
-  border-radius: 0.3rem;
+  width: 85%;
+  max-width: 600px;
+  background: radial-gradient(circle at top, #0a0a0f, #000);
+  border: 2px solid #3a3a5a;
+  border-radius: 0.6rem;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), 0 0 15px #2a2a4a inset;
+  animation: fadeIn 0.6s ease-out;
   z-index: 1000;
 
   .titulo {
-    margin-bottom: 2rem;
-    color: white;
-    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #dbe9ff;
+    font-size: 1.8rem;
+    font-family: 'Cinzel', serif; // tipografia medieval
+    text-shadow: 0 0 8px #4a6aff;
   }
 
   p {
     margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cfd6e6;
+    font-family: 'Merriweather', serif;
   }
 
   label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: #cfd6e6;
 
     .caixaTexto {
       width: 80%;
       padding: 0.6rem;
-      margin-bottom: 1rem;
-      background-color: transparent;
+      margin-top: 0.5rem;
+      background-color: rgba(20, 20, 30, 0.9);
       border-radius: 0.4rem;
-      border: none;
+      border: 1px solid #4a6aff;
       outline: none;
-      color: #dbdbdb;
-      border-bottom: 1px solid #dbdbdb;
+      color: #dbe9ff;
       font-size: 1.2rem;
-      
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #9bbcff;
+        box-shadow: 0 0 10px #4a6aff;
+      }
     }
   }
 
@@ -53,21 +61,43 @@ dialog.modal {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 
     .buttonModal {
-      background-color: transparent;
-      border: none;
-      color: #dbdbdb;
+      background: linear-gradient(145deg, #1a1a2e, #0f0f1a);
+      border: 1px solid #4a6aff;
+      border-radius: 0.3rem;
+      color: #dbe9ff;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #4a6aff;
+        color: #0a0a0f;
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #4a6aff;
+      }
     }
   }
 
   .resultado {
     margin-top: 1.5rem;
+    color: #dbe9ff;
+    font-size: 1.2rem;
+    text-shadow: 0 0 6px #4a6aff;
+    animation: fadeIn 0.5s ease-in;
   }
 
   img {
     margin-top: 1rem;
-    width: 100px;
+    width: 120px;
+    filter: drop-shadow(0 0 10px #4a6aff);
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
 }

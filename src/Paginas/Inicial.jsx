@@ -2,7 +2,7 @@ import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
 export function Inicial() {
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
   return (
     <main className="inicial">

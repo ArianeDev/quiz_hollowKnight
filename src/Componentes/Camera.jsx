@@ -1,6 +1,8 @@
+import { BrushCleaning, CameraIcon } from "lucide-react";
+import { TbCameraPlus } from "react-icons/tb";
 import { useEffect, useRef, useState } from "react";
 
-export function Camera({ onFotoTirada }) {
+export function Camera({ onFotoTirada, limparGaleria }) {
     const videoRef = useRef(null);
     const canvaRef = useRef(null);
     const [foto, setFoto] = useState(null);
@@ -44,7 +46,7 @@ export function Camera({ onFotoTirada }) {
     return (
         <section className="camera-box">
             <h2>Captura de câmera</h2>
-            <div className="preview">
+            <figure className="preview">
                 {/* Exibe a imagem que a câmera está capturando */}
                 {!foto ? (
                     <video 
@@ -57,14 +59,16 @@ export function Camera({ onFotoTirada }) {
                     // Mostra a foto tirada
                     <img src={foto} alt="Foto capturada" />
                 )}
-            </div>
-            <div>
+            </figure>
+            <section className="section_buttons">
                 {!foto ? (
-                    <button onClick={tirarFoto}>Tirar Foto</button>
+                    <button onClick={tirarFoto} className="button_camera"><CameraIcon className="icon" /> Tirar foto</button>
                 ) : (
-                    <button onClick={reiniciar}>Nova Foto</button>
+                    <button onClick={reiniciar} className="button_camera"><TbCameraPlus className="icon" /> Nova foto</button>
                 )}
-            </div>
+                
+                <button className="button_limpar" onClick={limparGaleria}><BrushCleaning />Limpar galeria</button>
+            </section>
             <canvas
                 ref={canvaRef}
                 style={{ display: "none" }}

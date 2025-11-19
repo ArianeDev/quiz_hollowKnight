@@ -7,6 +7,15 @@
     border-radius: 0.4rem;
     box-shadow: 0 0 25px rgba(27, 67, 247, 0.4);
 
+    h1 {
+        color: rgb(255, 255, 255);
+        margin: 1rem 0;
+    }
+
+    p {
+        color: aliceblue;
+    }
+    
     .galeria {
         scroll-behavior: smooth;
         scrollbar-color: #6b6b6b transparent;

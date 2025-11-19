@@ -34,5 +34,42 @@
       object-fit: cover;
       border-radius: 12px;
     }
+
   }
+  
+  button {
+    background: rgb(121, 0, 0);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    padding: 0.5rem 0.7rem;
+    transition: all .5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .icon {
+      font-size: 1.5rem;
+      color: rgb(255, 255, 255);
+    }
+
+  }
+
+  .section_buttons {
+    display: flex;
+    gap: 1rem;
+    
+    .button_limpar, .button_camera {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+    }
+    
+    .button_limpar {
+      background: rgb(116, 116, 116);
+    }
+  }
+
 }

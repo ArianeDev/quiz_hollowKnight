@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export function Menu() {
     return (
-        <div className='menu'>
+        <nav className='menu'>
             <ul>
                 <Link to = 'missao'>
                 <li>
@@ -39,6 +39,6 @@ export function Menu() {
                     </li>
                 </Link>   
             </ul>
-        </div>
+        </nav>
     )
 }

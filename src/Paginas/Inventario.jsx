@@ -23,25 +23,25 @@ export function Inventario() {
 
   return (
     <main className="conteiner">
-        <section className="inventario">
-      <h2>Inventário</h2>
-      <button className="limpar-inventario" onClick={limparInventario}>
-            Limpar Inventário
-          </button>
+      <section className="inventario">
+        <h2>Inventário</h2>
+        <button className="limpar-inventario" onClick={limparInventario}>
+          Limpar Inventário
+        </button>
 
-      {/* Caso o jogador ainda não tenha nenhuma figurinha */}
-      {figurinhas.length === 0 ? (
-        <p className="vazio">Nenhuma figurinha coletada ainda!</p>
-      ) : (
-        <div className="grid">
-          {figurinhas.map((f) => (
-            <div key={f.id} className="figurinha">
-              <img src={f.imagem} alt={f.nome} />
-             
-            </div>
-          ))}
-        </div>
-      )}
+        {/* Caso o jogador ainda não tenha nenhuma figurinha */}
+        {figurinhas.length === 0 ? (
+          <p className="vazio">Nenhuma figurinha coletada ainda!</p>
+        ) : (
+          <section className="grid">
+            {figurinhas.map((f) => (
+              <div key={f.id} className="figurinha">
+                <img src={f.imagem} alt={f.nome} />
+              
+              </div>
+            ))}
+          </section>
+        )}
       </section>
     </main>
   );
