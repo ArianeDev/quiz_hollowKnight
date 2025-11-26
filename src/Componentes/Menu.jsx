@@ -4,6 +4,8 @@ import bau from '../assets/bau_tratado.png';
 import camera from '../assets/camera_tratado.png';
 import { Link } from 'react-router-dom'
 
+// Componente do menu de navageção
+
 export function Menu() {
     return (
         <nav className='menu'>
@@ -16,14 +18,15 @@ export function Menu() {
                     </figure>
                 </li>
                 </Link>
-                
-                <li>
-                    <figure>
-                        <img src={bau} alt="Inventário" />
-                        <figcaption>Inventário</figcaption>
-                    </figure>
-                    
-                </li>
+                <Link to='inventario'>
+                    <li>
+                        <figure>
+                            <img src={bau} alt="Inventário" />
+                            <figcaption>Inventário</figcaption>
+                        </figure>
+                        
+                    </li>
+                </Link>
                 <li>
                     <figure>
                         <img src={mapa} alt="GeoLocalização" />

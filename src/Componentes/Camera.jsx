@@ -1,6 +1,12 @@
 import { BrushCleaning, CameraIcon } from "lucide-react";
 import { TbCameraPlus } from "react-icons/tb";
 import { useEffect, useRef, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
+/*
+    Componente de Câmera que permite capturar fotos usando a webcam do usuário.
+    Inclui funcionalidades para tirar fotos, reiniciar a câmera.
+*/ 
 
 export function Camera({ onFotoTirada, limparGaleria }) {
     const videoRef = useRef(null);
@@ -19,7 +25,7 @@ export function Camera({ onFotoTirada, limparGaleria }) {
                 videoRef.current.srcObject = stream;
             }
         } catch (error) {
-            console.error("Erro ao acessar a câmera: ", error);
+            toast.error("Erro ao acessar a câmera: " + error.message);
         }
     };
     const tirarFoto = () => {
@@ -37,6 +43,7 @@ export function Camera({ onFotoTirada, limparGaleria }) {
         if (onFotoTirada) {
             onFotoTirada(imagem);
         }
+        toast.success("Foto tirada com sucesso!");
     };
     const reiniciar = () => {
         setFoto(null);
@@ -45,6 +52,7 @@ export function Camera({ onFotoTirada, limparGaleria }) {
 
     return (
         <section className="camera-box">
+            <Toaster position="top-right" />
             <h2>Captura de câmera</h2>
             <figure className="preview">
                 {/* Exibe a imagem que a câmera está capturando */}

@@ -1,4 +1,12 @@
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+/*
+  Nesta página de Inventário, foi implementado o carregamento do inventário
+  a partir do localStorage ao abrir a página. Além disso, foi adicionada a
+  funcionalidade de limpar o inventário, removendo os dados do localStorage
+  e atualizando o estado local para refletir a mudança na interface do usuário.
+*/ 
 
 export function Inventario() {
   const [figurinhas, setFigurinhas] = useState([]);
@@ -18,11 +26,13 @@ export function Inventario() {
 
     // atualiza o estado local para refletir a limpeza na UI
     setFigurinhas([]);
+    toast.success("Inventário limpo com sucesso!");
   };
 
 
   return (
     <main className="conteiner">
+      <Toaster position="top-right" />
       <section className="inventario">
         <h2>Inventário</h2>
         <button className="limpar-inventario" onClick={limparInventario}>
@@ -35,9 +45,8 @@ export function Inventario() {
         ) : (
           <section className="grid">
             {figurinhas.map((f) => (
-              <div key={f.id} className="figurinha">
+              <div key={f.id} className="figurinha" aria-label="container">
                 <img src={f.imagem} alt={f.nome} />
-              
               </div>
             ))}
           </section>

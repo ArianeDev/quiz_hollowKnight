@@ -1,6 +1,11 @@
 import { useState } from "react";
-import sucesso from "../assets/win.png";
-import erro from "../assets/raios.png";
+import { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+
+/*
+  Componente de modal para exibir detalhes da missão e permitir que o usuário
+  envie uma resposta. Inclui verificação da resposta e feedback visual.
+*/ 
 
 export function MissaoModal({ missao, onClose, onConcluir }) {
   const [resposta, setResposta] = useState("");
@@ -9,7 +14,7 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
 
   const verificarResposta = () => {
     if (!resposta.trim()) {
-      alert("Por favor, digite uma resposta antes de enviar!");
+      toast.error("Por favor, digite uma resposta antes de enviar!");
       return;
     }
 
@@ -17,7 +22,7 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
       resposta.trim().toLowerCase() ===
       missao.respostaCorreta.trim().toLowerCase()
     ) {
-      setResultado("Resposta correta! Parabéns!");
+      toast.success("Resposta correta! Missão concluída.");
       setStatus("sucesso");
 
       // ✅ chama a função de concluir após 1s (tempo para mostrar feedback)
@@ -25,13 +30,14 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
         onConcluir(missao.id);
       }, 1000);
     } else {
-      setResultado("Resposta incorreta. Tente novamente!");
+      toast.error("Resposta incorreta. Tente novamente!");
       setStatus("erro");
     }
   };
 
   return (
     <dialog open className="modal">
+      <Toaster position="top-right" />
       <h2 className="titulo" id="titulo-missao">
         {missao.titulo}
       </h2>
@@ -54,26 +60,6 @@ export function MissaoModal({ missao, onClose, onConcluir }) {
         <button onClick={verificarResposta} className="buttonModal">Enviar</button>
         <button onClick={onClose} className="buttonModal">Fechar</button>
       </section>
-
-      {resultado && (
-        <div className="resultado">
-          <p>{resultado}</p>
-          {status === "sucesso" && (
-            <img
-              src={sucesso}
-              alt="Missão concluída com sucesso"
-              width="100"
-            />
-          )}
-          {status === "erro" && (
-            <img
-              src={erro}
-              alt="Erro na resposta da missão"
-              width="100"
-            />
-          )}
-        </div>
-      )}
     </dialog>
   );
 }

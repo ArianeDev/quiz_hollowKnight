@@ -1,6 +1,8 @@
 import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
+// Página Inicial do jogo
+
 export function Inicial() {
     const navigate = useNavigate();
 
